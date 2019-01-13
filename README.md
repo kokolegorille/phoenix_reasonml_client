@@ -1,5 +1,58 @@
 # phoenix_client
 
+## Building the project
+
+$ yarn global add bs-platform
+$ bsb -init phoenix_client -theme react
+$ cd phoenix_client/
+$ yarn install
+
+$ vim .gitignore 
+.DS_Store
+.elixir_ls/
+$ git init 
+Initialized empty Git repository in /Users/sqrt/DATA_2019/code/_REASONML/phoenix_client/.git/
+$ git add .
+$ git commit -m "Initial commit"
+
+## Adding css style
+
+yarn add -D node-sass css-loader sass-loader mini-css-extract-plugin
+
+Update webpack.config.js
+
+```
+...
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+...
+module.exports = {
+  ...
+  plugins: [
+    ...
+    new MiniCssExtractPlugin({ filename: './css/app.css' })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ]
+      }
+    ]
+  },
+  ...
+};
+```
+
+Update App.re
+
+[%bs.raw {|require("./app.css")|}];
+
+Add src/app.(s)css
+
 ## Run Project
 
 ```sh
