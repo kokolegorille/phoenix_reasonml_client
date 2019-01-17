@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@glennsl/bs-json@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@glennsl/bs-json/-/bs-json-3.0.0.tgz#b4e1cf6612270a8dd7287a8a71ebe17e8f0fb683"
+  integrity sha512-slqtGLd/c3yQK9Qfd1gfMB9JCzNU4wzCpVPfO9pXlG64M+te5r30FK++tb3uQEVlVLYtpgZ4wCHtkI8xoshgxQ==
+
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.7.11.tgz#b988582cafbb2b095e8b556526f30c90d057cace"
@@ -190,17 +195,7 @@ ajv-keywords@^3.1.0:
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.2.0.tgz#e86b819c602cf8821ad637413698f1dec021847a"
   integrity sha1-6GuBnGAs+IIa1jdBNpjx3sAhhHo=
 
-ajv@^6.1.0:
-  version "6.6.2"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.6.2.tgz#caceccf474bf3fc3ce3b147443711a24063cc30d"
-  integrity sha512-FBHEW6Jf5TB9MGBgUUA9XHkTbjXYfAUjY43ACMfmdMRHniyoMHjHjzD50OK8LGDWQwp4rWEsIq5kEqq7rvIM1g==
-  dependencies:
-    fast-deep-equal "^2.0.1"
-    fast-json-stable-stringify "^2.0.0"
-    json-schema-traverse "^0.4.1"
-    uri-js "^4.2.2"
-
-ajv@^6.5.5:
+ajv@^6.1.0, ajv@^6.5.5:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.7.0.tgz#e3ce7bb372d6577bb1839f1dfdfcbf5ad2948d96"
   integrity sha512-RZXPviBTtfmtka9n9sy1N5M5b82CbxWIR6HIis4s3WQTXDJamc/0gpCWNGz6EWdWp4DOfjzJfhz/AS9zVPjjWg==
@@ -570,6 +565,11 @@ browserify-zlib@^0.2.0:
   integrity sha512-Z942RysHXmJrhqk88FmKBVq/v5tqmSkDz7p54G/MGyjMnCFFnC79XWNbg+Vta8W6Wb2qtSZTSxIGkJrRpCFEiA==
   dependencies:
     pako "~1.0.5"
+
+bs-fetch@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/bs-fetch/-/bs-fetch-0.3.1.tgz#9c7d074b27e6bb2b9f2ec985964f32bcac49f79e"
+  integrity sha512-MxwnuuXPldXnoCtlpeN5JNbbmb1tVgsqpLfVunvuMLAIQNyP0TqoImHiQRTz38PBSN8/iX+2yVlm+PFJfnHHiA==
 
 bs-platform@^4.0.14:
   version "4.0.18"
