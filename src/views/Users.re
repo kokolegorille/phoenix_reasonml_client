@@ -39,6 +39,13 @@ let fetchUsers = () =>
     |> catch(_err => resolve(None))
   );
 
+/* let fetchUsers = () =>
+  Js.Promise.(
+    Axios.get(url)
+    |> then_(response => response |> Decode.users |> (users => Some(users) |> resolve))
+    |> catch(_err => resolve(None))
+  ); */
+
 let str = ReasonReact.string;
 
 let component = ReasonReact.reducerComponent("Users");

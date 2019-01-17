@@ -7,6 +7,8 @@ var App$ReactTemplate = require("./App.bs.js");
 
 ((require("./css/app.scss")));
 
+((require('whatwg-fetch')));
+
 ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App$ReactTemplate.make(/* array */[])), "app");
 
 /*  Not a pure module */
