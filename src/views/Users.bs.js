@@ -5,6 +5,7 @@ var List = require("bs-platform/lib/js/list.js");
 var $$Array = require("bs-platform/lib/js/array.js");
 var Block = require("bs-platform/lib/js/block.js");
 var Curry = require("bs-platform/lib/js/curry.js");
+var Axios = require("axios");
 var React = require("react");
 var Json_decode = require("@glennsl/bs-json/src/Json_decode.bs.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
@@ -31,10 +32,8 @@ var Decode = /* module */[
 var url = "http://localhost:4000/api/users";
 
 function fetchUsers(param) {
-  return fetch(url).then((function (prim) {
-                    return prim.json();
-                  })).then((function (json) {
-                  var users$1 = users(json);
+  return Axios.get(url).then((function (response) {
+                  var users$1 = users(response.data);
                   return Promise.resolve(users$1);
                 })).catch((function (_err) {
                 return Promise.resolve(undefined);

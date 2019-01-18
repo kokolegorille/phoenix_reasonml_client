@@ -5,8 +5,6 @@ type user = {
 	email: string,
 };
 
-type users = list(user);
-
 type state = 
 	| NotAsked
 	| Loading
@@ -26,25 +24,29 @@ module Decode = {
 			email: field("email", string, json),
 		};
 	let users = json => 
-		Json.Decode.(field("data", list(user), json));
+    Json.Decode.(field("data", list(user), json));
 };
 
 let url = "http://localhost:4000/api/users";
 
-let fetchUsers = () =>
+/* let fetchUsers = () =>
   Js.Promise.(
     Fetch.fetch(url)
     |> then_(Fetch.Response.json)
     |> then_(json => json |> Decode.users |> (users => Some(users) |> resolve))
     |> catch(_err => resolve(None))
-  );
-
-/* let fetchUsers = () =>
-  Js.Promise.(
-    Axios.get(url)
-    |> then_(response => response |> Decode.users |> (users => Some(users) |> resolve))
-    |> catch(_err => resolve(None))
   ); */
+
+let fetchUsers = () =>
+  Js.Promise.(
+    Axios.get(url)    
+    |> then_(
+      response => response##data 
+        |> Decode.users 
+        |> (users => Some(users) |> Js.Promise.resolve)
+    )
+    |> catch(_err => resolve(None))
+  );
 
 let str = ReasonReact.string;
 
