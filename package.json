@@ -22,8 +22,7 @@
     "phoenix": "^1.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "reason-react": ">=0.4.0",
-    "whatwg-fetch": "^3.0.0"
+    "reason-react": ">=0.4.0"
   },
   "devDependencies": {
     "bs-platform": "^4.0.14",

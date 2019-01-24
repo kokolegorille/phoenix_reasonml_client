@@ -29,7 +29,7 @@ var Decode = /* module */[
   /* users */users
 ];
 
-var url = "http://localhost:4000/api/users";
+var url = "http://localhost:4000/api/v1/users";
 
 function fetchUsers(param) {
   return Axios.get(url).then((function (response) {

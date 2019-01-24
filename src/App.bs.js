@@ -7,7 +7,9 @@ var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Home$ReactTemplate = require("./views/Home.bs.js");
 var Link$ReactTemplate = require("./components/Link.bs.js");
 var About$ReactTemplate = require("./views/About.bs.js");
+var Todos$ReactTemplate = require("./views/Todos.bs.js");
 var Users$ReactTemplate = require("./views/Users.bs.js");
+var Channels$ReactTemplate = require("./views/Channels.bs.js");
 var NotFound$ReactTemplate = require("./views/NotFound.bs.js");
 var CreateRouter$ReactTemplate = require("./functors/CreateRouter.bs.js");
 
@@ -17,18 +19,30 @@ function toRoute(url) {
     switch (match[0]) {
       case "about" : 
           if (match[1]) {
-            return /* NotFound */3;
+            return /* NotFound */5;
           } else {
-            return /* About */2;
+            return /* About */4;
+          }
+      case "channels" : 
+          if (match[1]) {
+            return /* NotFound */5;
+          } else {
+            return /* Channels */3;
+          }
+      case "todos" : 
+          if (match[1]) {
+            return /* NotFound */5;
+          } else {
+            return /* Todos */2;
           }
       case "users" : 
           if (match[1]) {
-            return /* NotFound */3;
+            return /* NotFound */5;
           } else {
             return /* Users */1;
           }
       default:
-        return /* NotFound */3;
+        return /* NotFound */5;
     }
   } else {
     return /* Home */0;
@@ -42,8 +56,12 @@ function toUrl(route) {
     case 1 : 
         return "/users";
     case 2 : 
-        return "/about";
+        return "/todos";
     case 3 : 
+        return "/channels";
+    case 4 : 
+        return "/about";
+    case 5 : 
         return "/not_found";
     
   }
@@ -83,7 +101,11 @@ function make(_children) {
                                                     return "Home";
                                                   }), /* array */[]))), React.createElement("li", undefined, ReasonReact.element(undefined, undefined, Link$ReactTemplate.make(toUrl(/* Users */1), (function (param) {
                                                     return "Users";
-                                                  }), /* array */[]))), React.createElement("li", undefined, ReasonReact.element(undefined, undefined, Link$ReactTemplate.make(toUrl(/* About */2), (function (param) {
+                                                  }), /* array */[]))), React.createElement("li", undefined, ReasonReact.element(undefined, undefined, Link$ReactTemplate.make(toUrl(/* Todos */2), (function (param) {
+                                                    return "Todos";
+                                                  }), /* array */[]))), React.createElement("li", undefined, ReasonReact.element(undefined, undefined, Link$ReactTemplate.make(toUrl(/* Channels */3), (function (param) {
+                                                    return "Channels";
+                                                  }), /* array */[]))), React.createElement("li", undefined, ReasonReact.element(undefined, undefined, Link$ReactTemplate.make(toUrl(/* About */4), (function (param) {
                                                     return "About";
                                                   }), /* array */[])))))), React.createElement("main", {
                               className: "container",
@@ -95,8 +117,12 @@ function make(_children) {
                                           case 1 : 
                                               return ReasonReact.element(undefined, undefined, Users$ReactTemplate.make(/* array */[]));
                                           case 2 : 
-                                              return ReasonReact.element(undefined, undefined, About$ReactTemplate.make(/* array */[]));
+                                              return ReasonReact.element(undefined, undefined, Todos$ReactTemplate.make(/* array */[]));
                                           case 3 : 
+                                              return ReasonReact.element(undefined, undefined, Channels$ReactTemplate.make(/* array */[]));
+                                          case 4 : 
+                                              return ReasonReact.element(undefined, undefined, About$ReactTemplate.make(/* array */[]));
+                                          case 5 : 
                                               return ReasonReact.element(undefined, undefined, NotFound$ReactTemplate.make(/* array */[]));
                                           
                                         }
