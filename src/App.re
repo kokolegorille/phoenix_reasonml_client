@@ -2,7 +2,6 @@
 type page =
   | Home
   | Users
-  | Todos
   | Channels
   | About
   | NotFound;
@@ -13,7 +12,6 @@ module Config = {
     switch (url.path) {
     | []        => Home
     | ["users"] => Users
-    | ["todos"] => Todos
     | ["channels"] => Channels
     | ["about"] => About
     | _         => NotFound
@@ -22,7 +20,6 @@ module Config = {
     switch (route) {
     | Home  => "/"
     | Users => "/users"
-    | Todos => "/todos"
     | Channels => "/channels"
     | About => "/about"
     | _     => "/not_found"
@@ -68,7 +65,6 @@ let make = _children => {
           <ul>
             <li><Link href=(Config.toUrl(Home)) label=(() => str("Home")) /></li>
             <li><Link href=(Config.toUrl(Users)) label=(() => str("Users")) /></li>
-            <li><Link href=(Config.toUrl(Todos)) label=(() => str("Todos")) /></li>
             <li><Link href=(Config.toUrl(Channels)) label=(() => str("Channels")) /></li>
             <li><Link href=(Config.toUrl(About)) label=(() => str("About")) /></li>
           </ul>
@@ -80,7 +76,6 @@ let make = _children => {
             switch route {
             | Home => <Home />
             | Users => <Users />
-            | Todos => <Todos />
             | Channels => <Channels />
             | About => <About />
             | NotFound => <NotFound />
